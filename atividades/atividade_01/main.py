@@ -23,10 +23,10 @@ while True:
                 gasolina = float(input("Informe o valor de Gasolina: ").replace(",", "."))
                 alcool = float(input("Informe o valor de Álcool: ").replace(",", "."))
                 percentual = (alcool / gasolina) * 100
-                if percentual <= 70:
-                    print(f"{percentual}% - Abasteça Álcool.")
+                if percentual < 70:
+                    print(f"{percentual:.2f}% - Abasteça Álcool.")
                 else: 
-                    print(f"{percentual}% - Abasteça Gasolina.")
+                    print(f"{percentual:.2f}% - Abasteça Gasolina.")
 
             except Exception as e:
                 print(f"Não foi possivel calcular. {e}.")
@@ -35,3 +35,28 @@ while True:
         case _:
             print("Operador inválido")
             continue 
+"""
+#TODO - Código feito pelo professor 
+
+While True:
+    try:
+        etanol = float(input("Informe o valor do etanol: R$ ").replace(",", "."))
+        gasolina = float(input("Informe o valor do gasolina: R$ ").replace(",", "."))
+        calculo = (etanol/gasolina)*100
+        result = "gasolina" if etanol > gasolina*0.7 else "etanol"
+
+        print(f"Resultado = {calculo:.2f}%. Compensa abastecer com {result}.")
+
+        opcao = input("Deseja refazer o cáculo? (s/n)").lower().strip()
+        match opcao:
+            case "s":
+                continue
+            case "n":
+                break
+             case _:
+                print("opção inválida.")
+                continue
+    except Exception as e:
+        print(f"Não foi possível executar operação. {e}.")
+        continue            
+"""
