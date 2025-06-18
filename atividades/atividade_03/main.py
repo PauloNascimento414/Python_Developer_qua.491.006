@@ -6,7 +6,7 @@
 #NOTE - para cada loop, o programa deverá limpar o terminal
 """
 #importa biblioteca
-import os as o
+import os
 import math as m
 
 while True:
@@ -17,31 +17,28 @@ while True:
     print("2 - Sair do programa")
 
     operador = input("Informe a operação desejada: ").strip()
-   
-    
-    
 
-    match operador:
-        case "0":
-            try:
-                raio = float(input("Informe o valor do raio: ").replace(",", "."))    
+    os.system("cls" if os.name == "nt" else "clear")
+    try:
+        if operador == "0" or operador == "1":
+            raio = float(input("Informe o valor do raio: ").replace(",", "."))
+        else:
+            pass
+        os.system("cls" if os.name == "nt" else "clear")
+        match operador:
+            case "0":
                 area = m.pi * (raio ** 2)
                 print(f"A área do círculo com raio {raio} é: {area}")
-            except Exception as e:
-                print(f"Não foi possível calcular a área. {e}.")
-                break
-        case "1":
-            try:
-                raio = float(input("Informe o valor do raio: ").replace(",", "."))
+                continue
+            case "1":
                 circunferencia = 2 * m.pi * raio
                 print(f"A circunferência do círculo com raio {raio} é: {circunferencia}")
-            except Exception as e:
-                print(f"Não foi possível calcular a circunferência. {e}.")
-                continue
-        case "2":
-            print("Saindo do programa...")
-            break
-        case _:
-            print("Operação inválida. Tente novamente.")
-            continue
-    o.system("cls")
+                continue       
+            case "2":
+                print("Saindo do programa...")
+                break
+            case _:
+                print("Operação inválida. Tente novamente.")
+                
+    except Exception as e:
+        print(f"Não foi possível calcular. {e}.")
