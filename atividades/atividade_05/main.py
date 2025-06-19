@@ -21,6 +21,7 @@ from datetime import date
 nome = input("Informe o seu nome: ").strip()
 idade = int(input("Informe a sua idade: "))
 os.system("cls" if os.name == "nt" else "clear")
+
 while True:
         # menu
     print(f"{'-'*20} FILMES {'-'*20}")
@@ -97,6 +98,7 @@ while True:
                 continue      
             case _:
                 print("Operação inválida. Tente novamente.")
+                continue
     except Exception as e:
         print(f"Não foi possivel selecionar a sala.{e}.")
 
