@@ -1,0 +1,4 @@
+Mais um arquivo para teste de manipulação de arquivos em python
+teste 2
+texto teste 2
+teste 3
