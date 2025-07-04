@@ -29,8 +29,8 @@ try:
     pessoa['estado'] = input("Informe a estado: ").upper().strip()
     pessoa['telefone_fixo'] = input("Informe o telefone: ").strip()
     pessoa['celular'] = input("Informe o celular: ").strip()
-    pessoa['altura'] = input("Informe a altura: ").replace(",", ".")
-    pessoa['peso'] = input("Informe o peso: ").replace(",", ".")
+    pessoa['altura'] = float(input("Informe a altura: ").replace(",", "."))
+    pessoa['peso'] = float(input("Informe o peso: ").replace(",", "."))
     pessoa['tipo_sanguineo'] = input("Informe o tipo sanguíneo: ").upper().strip()
     pessoa['cor'] = input("Informe a cor: ").strip()
 
